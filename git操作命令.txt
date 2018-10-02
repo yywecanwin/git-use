@@ -1,0 +1,45 @@
+操作说明：
+    1、创建版本库：git init
+    2:创建版本：
+        git add 文件名称
+        git commit -m '版本1'
+    3、查看版本记录：git log
+    4、版本回退：git reset --hard HEAD^
+        注：HEAD^:回归到前一个版本
+            HEAD^^:回归到前前一个版本
+            HEAD~1：回归到前一个版本
+            HEAD~100：回归到100个版本
+    4、查看你操作的记录：git reflog
+        当你把命令终端关掉之后，还想回归到上一个版本，此时就需要用到git regflog命令
+    
+    5、查看当前工作状态：git status
+    6、丢弃工作去的改动：git checkout --文件名称
+        在你添加到暂存区之后，并后没有提交。此时你有区工作区进行修改，在这次修改中你没有对此时修改添加到暂存区中。
+        而是直接提交了创建了版本库，此时你提交的只是暂存区的内容，在工作区修改的内容是不会被提交的。
+        当时使用git status命令查看时，会提示出你工作被修改。此时你可以再次git add和git commit两个命令，或者丢弃工作区的改动执行git checkout --文件名称命令
+
+    7、取消暂存：git reset HEAD 文件名称
+        此时回到了工作区，如果你不想要改动，可以执行git checkout --文件名称
+    8：比较版本HEAD中的文件和工作区的文件：git diff HEAD -- 要比较的文件名
+        -：代表的是HEAD版本文件
+        +：代表的是工作区的文件
+    9、删除文件按：rm 文件名称
+    10、查看有几个分支：git branch
+    11、创建新的分支并切换：git checkout -b 分支的名称
+    12、切换分支：git checkout 分支名称
+    13、合并某分支到当前分支：git merge 分支名称
+    14、删除分支：git branch -d 分支名称
+    15、同一个文件，并且在不同的分支进行修改，并提交。在合并分支会发生冲突，这是需要手动修改，修改之后在提交。
+    16、禁止快速提交：git merge --no-ff -m '禁止fast-forward' 分支名称
+        --no-ff参数：表示禁用fast-forward
+        本次合并要创建一个新的提交，所以加上-m参数，把commit描述写进去
+    17、保存工作现场：git stash
+    18、恢复工作现场：git stash pop
+    19、克隆：git clone 远程库的ssh
+    20、推送分支：git push origin 分支名称
+    21、拉取代码：git pull origin
+
+
+
+
+
